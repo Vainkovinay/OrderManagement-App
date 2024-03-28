@@ -2,11 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Image} from 'react-native';
 import { TextInput, Checkbox } from 'react-native-paper';
-
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const LoginScreen=()=> {
-  const [checked,setChecked] = useState(false)
+  const [checked,setChecked] = useState(false);
+  const [password, setPassword] = useState(''); 
+  const [showPassword, setShowPassword] = useState(false); 
+  const toggleShowPassword = () => { 
+    setShowPassword(!showPassword); 
+  }; 
 
   return (
     <View style={styles.container}>
@@ -14,7 +18,10 @@ const LoginScreen=()=> {
         
         <Text style={styles.heading}>Technosys order Management</Text>
 
-        <Image source={require('..\assets\Technosys.jpeg')}></Image>
+        <Image 
+          style={styles.image} 
+          source={require('D:/Replica-app/assets/TechnosysI.png')}>
+        </Image>
         
         <TextInput
           // left={<TextInput.Icon icon="account" />}
@@ -24,12 +31,20 @@ const LoginScreen=()=> {
         ></TextInput>
         
         <TextInput
-          // left={<TextInput.Icon icon="form-textbox-password" />}
-          style={styles.inputText}
-          mode= 'outlined'
-          label='Password'
+          mode='outlined'
+          secureTextEntry={!showPassword} 
+          value={password} 
+          onChangeText={setPassword} 
+          style={styles.inputText} 
+          label="Password"
         ></TextInput>
-      
+
+        <MaterialCommunityIcons 
+          name={showPassword ? 'eye-off' : 'eye'} 
+          size={24} 
+          style={styles.icon} 
+          onPress={toggleShowPassword} 
+        /> 
       </View>
       
       <View style={{flexDirection:'row', marginTop: 10}}>
@@ -74,8 +89,18 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: 'white',
     activeOutlineColor: 'black',
-    marginBottom: 20,
+    marginBottom: 10,
+    // flex: 1, 
+    // color: '#333', 
+    // // paddingVertical: 10, 
+    // paddingRight: 10, 
+    // fontSize: 16, 
   },
+
+  icon: { 
+    marginLeft: 10,
+    color: 'black',
+  }, 
   
   heading:{
     fontWeight:'bold',
@@ -83,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 21,
     textAlign: 'center',
     paddingTop: 35,
-    paddingBottom: 200,
+    paddingBottom: 80,
     color: 'black',
   },
 
@@ -113,6 +138,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  image:{
+    height: 130,
+    width: 130,
+    marginBottom: 40,
   }
 })
 
