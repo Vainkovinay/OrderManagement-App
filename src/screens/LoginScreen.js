@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, Image} from 'react-na
 import { TextInput, Checkbox } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const LoginScreen=()=> {
+const LoginScreen=({navigation})=> {
   const [checked,setChecked] = useState(false);
   const [password, setPassword] = useState(''); 
   const [showPassword, setShowPassword] = useState(false); 
@@ -61,7 +61,7 @@ const LoginScreen=()=> {
       </View>
       
       <View style={styles.thirdview}>
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('Home')}>
         <Text style={styles.buttons}>Login</Text>
       </TouchableOpacity>
       </View>
