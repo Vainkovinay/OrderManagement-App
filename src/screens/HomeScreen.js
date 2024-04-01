@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Appbar, Avatar, Card, IconButton } from 'react-native-paper';
 
 const HomeScreen=({navigation})=> {
@@ -11,7 +11,7 @@ const HomeScreen=({navigation})=> {
         <Appbar.Header>
           <Appbar.BackAction onPress={()=>navigation.navigate('Login')}/>
           <Appbar.Content 
-            title="Technosys Order Management" 
+            title="Order Management" 
             style={{fontSize: 10}}/>
           <Appbar.Action icon="magnify" onPress={()=>{}} />
           <Appbar.Action icon="dots-vertical" onPress={()=>{}} />
@@ -24,18 +24,23 @@ const HomeScreen=({navigation})=> {
         
         <View style={{flexDirection: 'row'}}>
           
-          <View style={styles.insideview1}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/person.png')}></Image>
-            <Text style={styles.insidetext}>Customer</Text>
+          <View style={styles.insideview1} >
+            <TouchableOpacity onPress={()=>navigation.navigate('Customer')}>
+              <Image 
+                style={styles.personimage} 
+                source={require('D:/Replica-app/assets/user (1).png')}
+              ></Image>
+              <Text style={styles.insidetext}>Customer</Text>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.insideview2}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/person.png')}></Image>
+            <Image style={styles.personimage} source={require('D:/Replica-app/assets/folder (1).png')}></Image>
             <Text style={styles.insidetext}>Product Category</Text>
           </View>
 
           <View style={styles.insideview2}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/person.png')}></Image>
+            <Image style={styles.personimage} source={require('D:/Replica-app/assets/cubes.png')}></Image>
             <Text style={styles.insidetext}>Product Master</Text>
           </View>
 
@@ -48,8 +53,10 @@ const HomeScreen=({navigation})=> {
         <View style={{flexDirection: 'row'}}>
           
           <View style={styles.insideview1}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/Arrow.png')}></Image>
-            <Text style={styles.insidetext}>Order Entry</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('Order')}>
+              <Image style={styles.personimage} source={require('D:/Replica-app/assets/down-arrow.png')}></Image>
+              <Text style={styles.insidetext}>Order Entry</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -92,7 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 15,
     marginLeft: 15,
-    height: 90,
+    height: 100,
     width: 85,
   },
 
@@ -103,7 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 15,
     marginLeft: 15,
-    height: 90,
+    height: 100,
     width: 85,
   },
 
@@ -116,6 +123,7 @@ const styles = StyleSheet.create({
 
   personimage:{
     height: 40,
+    width: 40,
     alignItems: "center",
     alignSelf: "center",
     marginTop: 10,

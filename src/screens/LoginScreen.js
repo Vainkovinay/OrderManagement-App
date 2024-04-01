@@ -16,7 +16,7 @@ const LoginScreen=({navigation})=> {
     <View style={styles.container}>
       <View style={styles.wrapper}>
         
-        <Text style={styles.heading}>Technosys order Management</Text>
+        <Text style={styles.heading}>Order Management</Text>
 
         <Image 
           style={styles.image} 
