@@ -1,8 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { Appbar, Avatar, Card, IconButton } from 'react-native-paper';
+import { Appbar, Avatar, Card, IconButton, Surface, FAB, Portal, PaperProvider} from 'react-native-paper';
 
 const HomeScreen=({navigation})=> {
+  const [state, setState] = React.useState({ open: false });
+  const onStateChange = ({ open }) => setState({ open });
+  const { open } = state;
+
   return (
     
     <View style={styles.container}>
@@ -13,33 +18,34 @@ const HomeScreen=({navigation})=> {
           <Appbar.Content 
             title="Order Management" 
             style={{fontSize: 10}}/>
-          <Appbar.Action icon="magnify" onPress={()=>{}} />
           <Appbar.Action icon="dots-vertical" onPress={()=>{}} />
         </Appbar.Header>
       </View>
       
-      <View style={styles.fistcontainer}>
+      <View style={styles.fistcontainer} elevation={4}>
         
         <Text style={styles.containerheading}>Master</Text>
         
         <View style={{flexDirection: 'row'}}>
           
-          <View style={styles.insideview1} >
-            <TouchableOpacity onPress={()=>navigation.navigate('Customer')}>
-              <Image 
-                style={styles.personimage} 
-                source={require('D:/Replica-app/assets/user (1).png')}
-              ></Image>
-              <Text style={styles.insidetext}>Customer</Text>
+          <View style={styles.insideview1} elevation={8}>
+              <TouchableOpacity onPress={()=>navigation.navigate('Customer')}>
+                <Image 
+                  style={styles.personimage} 
+                  source={require('D:/Replica-app/assets/user (1).png')}
+                ></Image>
+                <Text style={styles.insidetext}>Customer</Text>
+              </TouchableOpacity>
+          </View>
+
+          <View style={styles.insideview2} elevation={8}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Product')}>
+            <Image style={styles.personimage} source={require('D:/Replica-app/assets/folder (1).png')}></Image>
+            <Text style={styles.insidetext}>Product Category</Text>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.insideview2}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/folder (1).png')}></Image>
-            <Text style={styles.insidetext}>Product Category</Text>
-          </View>
-
-          <View style={styles.insideview2}>
+          <View style={styles.insideview2} elevation={8}>
             <Image style={styles.personimage} source={require('D:/Replica-app/assets/cubes.png')}></Image>
             <Text style={styles.insidetext}>Product Master</Text>
           </View>
@@ -47,12 +53,14 @@ const HomeScreen=({navigation})=> {
         </View>
       </View>
 
-      <View style={styles.secondcontainer}>
+      <View style={styles.secondcontainer} elevation={4}>
         <Text style={styles.containerheading}>Transactions</Text>
 
         <View style={{flexDirection: 'row'}}>
+
           
-          <View style={styles.insideview1}>
+          
+          <View style={styles.insideview1} elevation={8}>
             <TouchableOpacity onPress={()=>navigation.navigate('Order')}>
               <Image style={styles.personimage} source={require('D:/Replica-app/assets/down-arrow.png')}></Image>
               <Text style={styles.insidetext}>Order Entry</Text>
@@ -60,7 +68,44 @@ const HomeScreen=({navigation})=> {
           </View>
         </View>
       </View>
-    
+
+      <View>
+        <PaperProvider>
+          <Portal>
+            <FAB.Group
+              open={open}
+              visible
+              icon={open ? 'calendar-today' : 'plus'}
+              actions={[
+                { icon: 'plus', onPress: () => console.log('Pressed add') },
+                {
+                  icon: 'star',
+                  label: 'Star',
+                  onPress: () => console.log('Pressed star'),
+                },
+                {
+                  icon: 'email',
+                  label: 'Email',
+                  onPress: () => console.log('Pressed email'),
+                },
+                {
+                  icon: 'bell',
+                  label: 'Remind',
+                  onPress: () => console.log('Pressed notifications'),
+                },
+              ]}
+              onStateChange={onStateChange}
+              onPress={() => {
+                if (open) {
+                  // do something if the speed dial is open
+                }
+              }}
+            />
+          </Portal>
+        </PaperProvider>
+      </View>
+      
+
     </View>
   );
 };
@@ -95,6 +140,7 @@ const styles = StyleSheet.create({
     
     flexDirection: "column",
     backgroundColor: 'white',
+    borderColor: 'white',
     borderWidth: 1,
     borderRadius: 10,
     marginTop: 15,
@@ -106,6 +152,7 @@ const styles = StyleSheet.create({
   insideview2: {
     flexDirection: "column",
     backgroundColor: 'white',
+    borderColor: 'white',
     borderWidth: 1,
     borderRadius: 10,
     marginTop: 15,
