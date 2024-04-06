@@ -20,7 +20,7 @@ const LoginScreen=({navigation})=> {
 
         <Image 
           style={styles.image} 
-          source={require('D:/Replica-app/assets/TechnosysI.png')}>
+          source={require('D:/HEMANT SHRIMALI/Replica-app/assets/TechnosysI.png')}>
         </Image>
         
         <TextInput

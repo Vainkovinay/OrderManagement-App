@@ -32,7 +32,7 @@ const HomeScreen=({navigation})=> {
               <TouchableOpacity onPress={()=>navigation.navigate('Customer')}>
                 <Image 
                   style={styles.personimage} 
-                  source={require('D:/Replica-app/assets/user (1).png')}
+                  source={require('D:/HEMANT SHRIMALI/Replica-app/assets/user (1).png')}
                 ></Image>
                 <Text style={styles.insidetext}>Customer</Text>
               </TouchableOpacity>
@@ -40,13 +40,13 @@ const HomeScreen=({navigation})=> {
 
           <View style={styles.insideview2} elevation={8}>
             <TouchableOpacity onPress={()=>navigation.navigate('Product')}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/folder (1).png')}></Image>
+            <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/folder (1).png')}></Image>
             <Text style={styles.insidetext}>Product Category</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.insideview2} elevation={8}>
-            <Image style={styles.personimage} source={require('D:/Replica-app/assets/cubes.png')}></Image>
+            <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/cubes.png')}></Image>
             <Text style={styles.insidetext}>Product Master</Text>
           </View>
 
@@ -62,7 +62,7 @@ const HomeScreen=({navigation})=> {
           
           <View style={styles.insideview1} elevation={8}>
             <TouchableOpacity onPress={()=>navigation.navigate('Order')}>
-              <Image style={styles.personimage} source={require('D:/Replica-app/assets/down-arrow.png')}></Image>
+              <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/down-arrow.png')}></Image>
               <Text style={styles.insidetext}>Order Entry</Text>
             </TouchableOpacity>
           </View>

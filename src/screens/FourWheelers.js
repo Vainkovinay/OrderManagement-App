@@ -17,11 +17,11 @@ const FourWheelers=({navigation})=> {
       </View>
       
       <ScrollView style={{flexDirection: 'column'}}>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/C1.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/C2.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/C3.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/C4.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/C5.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/C1.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/C2.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/C3.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/C4.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/C5.jpeg')}/>
       </ScrollView>
     
     </View>

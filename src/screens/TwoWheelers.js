@@ -17,12 +17,12 @@ const TwoWheelers=({navigation})=> {
       </View>
       
       <ScrollView style={{flexDirection: 'column'}}>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/B1.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/B2.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/B3.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/B4.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/B5.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/B6.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B1.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B2.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B3.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B4.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B5.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B6.jpeg')}/>
       </ScrollView>
     
     </View>

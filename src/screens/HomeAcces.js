@@ -17,13 +17,13 @@ const HomeAcces=({navigation})=> {
       </View>
       
       <ScrollView style={{flexDirection: 'column'}}>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/HA1.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/ha2.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/HA3.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/HA4.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/HA5.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/HA6.jpeg')}/>
-        <Image style={styles.image} source={require('D:/Replica-app/assets/HA7.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/HA1.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/ha2.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/HA3.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/HA4.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/HA5.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/HA6.jpeg')}/>
+        <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/HA7.jpeg')}/>
       </ScrollView>
     
     </View>
