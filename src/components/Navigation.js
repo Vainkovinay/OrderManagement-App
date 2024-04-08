@@ -22,14 +22,12 @@ const Navigation=()=> {
   return (
     <NavigationContainer>
     <Stack.Navigator>
+      <Stack.Screen name='Login' component={LoginScreen} options={{headerShown:false}} />
       <Stack.Screen name='HomeA' component={HomeAcces} options={{headerShown:false}}/>
-     
       <Stack.Screen name='Home' component={HomeScreen} options={{headerShown: false}}/>
       <Stack.Screen name='Customer' component={CustomerScreen} options={{headerShown:false}} />
-      <Stack.Screen name='Login' component={LoginScreen} options={{headerShown:false}} />
       <Stack.Screen name='Order' component={OrderEntry} options={{headerShown:false}}/>
       <Stack.Screen name='Product' component={ProductCategory} options={{headerShown:false}}/>
-      
       <Stack.Screen name='Sta' component={Stationary} options={{headerShown:false}}/>
       <Stack.Screen name='Two' component={TwoWheelers} options={{headerShown:false}}/>
       <Stack.Screen name='Four' component={FourWheelers} options={{headerShown:false}}/>

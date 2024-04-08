@@ -24,30 +24,32 @@ const LoginScreen=({navigation})=> {
         </Image>
         
         <TextInput
-          // left={<TextInput.Icon icon="account" />}
           style={styles.inputText}
           mode= 'outlined'
           label='User Name'
         ></TextInput>
         
-        <TextInput
-          mode='outlined'
-          secureTextEntry={!showPassword} 
-          value={password} 
-          onChangeText={setPassword} 
-          style={styles.inputText} 
-          label="Password"
-        ></TextInput>
-
-        <MaterialCommunityIcons 
-          name={showPassword ? 'eye-off' : 'eye'} 
-          size={24} 
-          style={styles.icon} 
-          onPress={toggleShowPassword} 
-        /> 
+        <View style={styles.passwordContainer}>
+          <TextInput
+            mode='outlined'
+            secureTextEntry={!showPassword} 
+            value={password} 
+            onChangeText={setPassword} 
+            style={styles.passwordInput} 
+            label="Password"
+          />
+          <TouchableOpacity style={styles.iconContainer} onPress={toggleShowPassword}>
+            <MaterialCommunityIcons 
+              name={showPassword ? 'eye-off' : 'eye'} 
+              size={24} 
+              style={styles.icon} 
+            /> 
+          </TouchableOpacity>
+        </View>
+        
       </View>
       
-      <View style={{flexDirection:'row', marginTop: 10}}>
+      <View style={styles.rememberContainer}>
         <Text style={styles.bottomtext}>Remember me</Text>
         
         <Checkbox 
@@ -57,13 +59,12 @@ const LoginScreen=({navigation})=> {
             setChecked(!checked);
           }}
         />
-      
       </View>
       
       <View style={styles.thirdview}>
-      <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('Home')}>
-        <Text style={styles.buttons}>Login</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('Home')}>
+          <Text style={styles.buttons}>Login</Text>
+        </TouchableOpacity>
       </View>
 
     </View>
@@ -80,28 +81,42 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
+  passwordContainer: {
+    width: 300,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  rememberContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+    marginLeft: 35, 
+    marginRight: 30,
+  },
+  passwordInput: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  iconContainer: {
+    position: 'absolute',
+    right: 0,
+    paddingRight: 10,
+    alignItems: 'center',
+  },
   thirdview:{
     justifyContent: 'center',
   },
-
   inputText: {
     width: 300,
     backgroundColor: 'white',
     activeOutlineColor: 'black',
     marginBottom: 10,
-    // flex: 1, 
-    // color: '#333', 
-    // // paddingVertical: 10, 
-    // paddingRight: 10, 
-    // fontSize: 16, 
   },
-
   icon: { 
-    marginLeft: 10,
     color: 'black',
   }, 
-  
   heading:{
     fontWeight:'bold',
     paddingTop: 20,
@@ -111,18 +126,14 @@ const styles = StyleSheet.create({
     paddingBottom: 80,
     color: 'black',
   },
-
   bottomtext:{
     fontSize: 16,
     fontWeight: 'bold',
-    paddingLeft: 40,
   },
-
   checkboxs:{
     alignItems:'flex-end',
     backgroundColor: 'black',
   },
-
   loginButton: {
     backgroundColor: 'black',
     alignItems: 'center',
@@ -133,13 +144,11 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 40,
   },
-
   buttons:{
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
   },
-
   image:{
     height: 130,
     width: 130,
