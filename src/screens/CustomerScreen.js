@@ -20,8 +20,8 @@ const CustomerScreen=({navigation})=> {
         <Card.Title
             style={styles.cardDesign}
             title="AAMANTRAM - VIRAR (E)"
-            subtitle={'SlipNo: 3519 | 01 Apr 2024 \nExecutive: ANKIT SIR \nAmount: 13932.0'}
-            subtitleNumberOfLines={3}
+            subtitle={'SlipNo: 3519 | 01 Apr 2024 \nExecutive: Shri Shri Maharaja Suryavardankumar ( The King of Meluha ) \nAmount: 13932.0'}
+            subtitleNumberOfLines={5}
             left={(props) => <Avatar.Icon {...props} icon="account" />}
             right={(props) => <IconButton {...props} icon="arrow-right" onPress={() => {}} />}
         />
