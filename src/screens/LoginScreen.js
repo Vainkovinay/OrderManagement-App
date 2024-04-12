@@ -1,16 +1,51 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Image} from 'react-native';
+import { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image,Alert} from 'react-native';
 import { TextInput, Checkbox } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const LoginScreen=({navigation})=> {
+  const [username, setUsername] = useState(null);
+  const [errors, setErrors] = useState({});
   const [checked,setChecked] = useState(false);
   const [password, setPassword] = useState(''); 
   const [showPassword, setShowPassword] = useState(false); 
+  const [isFormValid, setisFormValid] = useState(false);
+  const [loginClicked, setLoginClicked] = useState(false);
   const toggleShowPassword = () => { 
     setShowPassword(!showPassword); 
   }; 
+
+  useEffect(()=>{
+    validateForm();
+  },[username,password]);
+  
+  const validateForm =() =>{
+    let errors ={};
+
+    if (!username) {
+      errors.username = 'username is required';
+    }
+
+    if(!password){
+      errors.password='Password is required.';
+    } else if (password.length < 6) {
+      errors.password= 'Password must be atleast 6 characters long';
+    }
+
+    setErrors(errors);
+    setisFormValid(Object.keys(errors).length===0);
+  };
+
+  const handleRegister = () => {
+    validateForm();
+    setLoginClicked(true);
+    if (isFormValid) {
+      navigation.navigate('Home');
+    } else {
+      Alert.alert('Please Enter the Fields Properly.');
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -27,14 +62,18 @@ const LoginScreen=({navigation})=> {
           style={styles.inputText}
           mode= 'outlined'
           label='User Name'
+          onChangeText={(text)=> setUsername(text)}
         ></TextInput>
+        {loginClicked && errors.username && (
+          <Text style={styles.error}>{errors.username}</Text>
+        )}
         
         <View style={styles.passwordContainer}>
           <TextInput
             mode='outlined'
             secureTextEntry={!showPassword} 
             value={password} 
-            onChangeText={setPassword} 
+            onChangeText={(text)=>setPassword(text)} 
             style={styles.passwordInput} 
             label="Password"
           />
@@ -46,6 +85,9 @@ const LoginScreen=({navigation})=> {
             /> 
           </TouchableOpacity>
         </View>
+        {loginClicked && errors.password && (
+          <Text style={styles.error}>{errors.password}</Text>
+        )}
         
       </View>
       
@@ -62,7 +104,7 @@ const LoginScreen=({navigation})=> {
       </View>
       
       <View style={styles.thirdview}>
-        <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.loginButton} onPress={handleRegister}>
           <Text style={styles.buttons}>Login</Text>
         </TouchableOpacity>
       </View>
@@ -75,6 +117,11 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     backgroundColor: 'white',
+  },
+  error:{
+    color: 'red',
+    fontSize: 13,
+    paddingBottom: 10,
   },
   wrapper:{
     alignContent:'center',

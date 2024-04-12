@@ -13,13 +13,17 @@ const HomeScreen=({navigation})=> {
     <View style={styles.container}>
       
       <View style={styles.appbar}>
-        <Appbar.Header>
+        
+        <Appbar.Header style={styles.appbarHeader}>
+          
           <Appbar.BackAction onPress={()=>navigation.navigate('Login')}/>
           <Appbar.Content 
             title="Order Management" 
             style={{fontSize: 10}}/>
           <Appbar.Action icon="dots-vertical" onPress={()=>{}} />
+        
         </Appbar.Header>
+      
       </View>
       
       <View style={styles.fistcontainer} elevation={4}>
@@ -29,31 +33,46 @@ const HomeScreen=({navigation})=> {
         <View style={{flexDirection: 'row'}}>
           
           <View style={styles.insideview1} elevation={8}>
+              
               <TouchableOpacity onPress={()=>navigation.navigate('Customer')}>
+                
                 <Image 
                   style={styles.personimage} 
                   source={require('D:/HEMANT SHRIMALI/Replica-app/assets/user (1).png')}
                 ></Image>
+                
                 <Text style={styles.insidetext}>Customer</Text>
+              
               </TouchableOpacity>
+          
           </View>
 
           <View style={styles.insideview2} elevation={8}>
+            
             <TouchableOpacity onPress={()=>navigation.navigate('Product')}>
+            
             <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/folder (1).png')}></Image>
+            
             <Text style={styles.insidetext}>Product Category</Text>
+            
             </TouchableOpacity>
+          
           </View>
 
           <View style={styles.insideview2} elevation={8}>
+            
             <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/cubes.png')}></Image>
+            
             <Text style={styles.insidetext}>Product Master</Text>
+          
           </View>
 
         </View>
+      
       </View>
 
       <View style={styles.secondcontainer} elevation={4}>
+        
         <Text style={styles.containerheading}>Transactions</Text>
 
         <View style={{flexDirection: 'row'}}>
@@ -61,11 +80,17 @@ const HomeScreen=({navigation})=> {
           
           
           <View style={styles.insideview1} elevation={8}>
+            
             <TouchableOpacity onPress={()=>navigation.navigate('Order')}>
+              
               <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/down-arrow.png')}></Image>
+              
               <Text style={styles.insidetext}>Order Entry</Text>
+            
             </TouchableOpacity>
+          
           </View>
+        
         </View>
       </View>
 
@@ -111,8 +136,9 @@ const HomeScreen=({navigation})=> {
 };
 
 const styles = StyleSheet.create({
-  appbarTitle:{
+  appbarHeader:{
     fontSize: 10,
+    backgroundColor: 'white'
   },
 
   container:{

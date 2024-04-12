@@ -7,6 +7,7 @@ import { Appbar, Avatar, Card, IconButton, ActivityIndicator } from 'react-nativ
 const CustomerScreen = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const userColors = ['darkred', 'blue','pink','skyblue' ,'purple','green', 'lightgreen'];
 
   const customer = async () => {
     try {
@@ -27,24 +28,13 @@ const CustomerScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.appbar}>
-        <Appbar.Header>
+        <Appbar.Header style={styles.appbarHeader}>
           <Appbar.BackAction onPress={() => navigation.navigate('Home')}/>
           <Appbar.Content 
             title="Customer" 
             style={{fontSize: 10}}
           />
         </Appbar.Header>
-      </View>
-      
-      <View>
-        <Card.Title
-          style={styles.cardDesign}
-          title="AAMANTRAM - VIRAR (E)"
-          subtitle={'SlipNo: 3519 | 01 Apr 2024 \nExecutive: Shri Shri Maharaja Suryavardankumar ( The King of Meluha ) \nAmount: 13932.0'}
-          subtitleNumberOfLines={5}
-          left={(props) => <Avatar.Icon {...props} icon="account" />}
-          right={(props) => <IconButton {...props} icon="arrow-right" onPress={() => {}} />}
-        />
       </View>
 
       <View style={styles.Api}>
@@ -53,12 +43,17 @@ const CustomerScreen = ({navigation}) => {
         ) : (
           <FlatList
             data={data}
-            keyExtractor={(item) => item.id.toString()} // Assuming id is a number
+            keyExtractor={(item) => item.id.toString()}
             renderItem={(item) => (
-              <View style={styles.item}>
-                <Text>SlipNo: 3519 | 01 Apr 2024 </Text>
-                <Text>Executive: {item.item.username}</Text>
-                <Text>Amount: 15000.0</Text>
+              <View>
+                <Card.Title
+                  style={styles.cardDesign}
+                  title={<Text style={{fontWeight:'bold'}}>{item.item.name}</Text>}
+                  subtitle={`Username: ${item.item.username}\nEmail: ${item.item.email}\nCity: ${item.item.address.city}`}
+                  subtitleNumberOfLines={5}
+                  left={(props) => <Avatar.Icon {...props} icon="account" style={{ backgroundColor: userColors[item.index % userColors.length] }}/>}
+                  right={(props) => <IconButton {...props} icon="arrow-right" onPress={() => {}} />}
+                />
               </View>
             )}
           />
@@ -69,19 +64,24 @@ const CustomerScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  appbarTitle: {
+  appbarHeader: {
     fontSize: 10,
+    backgroundColor: 'skincolor'
   },
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "skincolor",
   },
   cardDesign: {
+    backgroundColor: 'white',
     borderWidth: 1,
     borderRadius: 10,
     marginLeft: 13,
     marginRight: 13,
-    marginTop: 8,
+    marginTop: 10,
+    height: 120,
+    elevation: 7,
+    borderColor: 'white',
   },
   Api: {
     flex: 1,

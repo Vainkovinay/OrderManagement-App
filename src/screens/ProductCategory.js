@@ -9,7 +9,7 @@ const ProductCategory=({navigation})=> {
     <View style={styles.container}>
       
       <View style={styles.appbar}>
-        <Appbar.Header>
+        <Appbar.Header style={styles.appbarHeader}>
           <Appbar.BackAction onPress={()=>navigation.navigate('Home')}/>
           <Appbar.Content 
             title="Product Category" 
@@ -55,9 +55,9 @@ const ProductCategory=({navigation})=> {
 };
 
 const styles = StyleSheet.create({
-  appbarTitle:{
+  appbarHeader:{
     fontSize: 10,
-    
+    backgroundColor: 'white'
   },
 
   container:{
