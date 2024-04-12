@@ -1,85 +1,81 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { Appbar, Avatar, Card, IconButton } from 'react-native-paper';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, FlatList, Text } from 'react-native';
+import { Appbar, DataTable, ActivityIndicator } from 'react-native-paper';
 
-const OrderEntry=({navigation})=> {
+const OrderEntry = ({ navigation }) => {
+  const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
+  const fetchCustomers = async () => {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users/');
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCustomers();
+  }, []);
+
   return (
-    
     <View style={styles.container}>
-      
       <View style={styles.appbar}>
         <Appbar.Header>
-          <Appbar.BackAction onPress={()=>navigation.navigate('Home')}/>
-          <Appbar.Content 
-            title="Order Entry" 
-            style={{fontSize: 10}}/>
+          <Appbar.BackAction onPress={() => navigation.navigate('Home')} />
+          <Appbar.Content title="Order Entry" />
         </Appbar.Header>
       </View>
-      
-      <View>
-        <Card.Title
-            style={styles.cardDesign}
-            title="AAMANTRAM - VIRAR (E)"
-            subtitle={'SlipNo: 3519 | 01 Apr 2024 \nExecutive: ANKIT SIR \nAmount: 13932.0'}
-            subtitleNumberOfLines={3}
-            left={(props) => <Avatar.Icon {...props} icon="account" />}
-            right={(props) => <IconButton {...props} icon="arrow-right" onPress={() => {}} />}
-        />
-        <Card.Title
-            style={styles.cardDesign}
-            title="AAMANTRAM - VIRAR (E)"
-            subtitle={'SlipNo: 3519 | 01 Apr 2024 \nExecutive: ANKIT SIR \nAmount: 13932.0'}
-            subtitleNumberOfLines={3}
-            left={(props) => <Avatar.Icon {...props} icon="account" />}
-            right={(props) => <IconButton {...props} icon="arrow-right" onPress={() => {}} />}
-        />
-        <Card.Title
-            style={styles.cardDesign}
-            title="AAMANTRAM - VIRAR (E)"
-            subtitle={'SlipNo: 3519 | 01 Apr 2024 \nExecutive: ANKIT SIR \nAmount: 13932.0'}
-            subtitleNumberOfLines={3}
-            left={(props) => <Avatar.Icon {...props} icon="account" />}
-            right={(props) => <IconButton {...props} icon="arrow-right" onPress={() => {}} />}
-        />
+
+      <View style={styles.api}>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <>
+            <DataTable>
+              <DataTable.Header>
+                <DataTable.Title sortDirection='descending'>Customer Name</DataTable.Title>
+                <DataTable.Title numeric>OrderID</DataTable.Title>
+                <DataTable.Title numeric>Amount</DataTable.Title>
+              </DataTable.Header>
+            </DataTable>
+            <FlatList
+              data={data}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({ item, index }) => (
+                <DataTable.Row> 
+                  <DataTable.Cell style={styles.datacell}>{item.name}</DataTable.Cell>
+                  <DataTable.Cell numeric>{1001 + index}</DataTable.Cell>
+                  <DataTable.Cell numeric><Text style={styles.colorText}>5000</Text></DataTable.Cell>
+                </DataTable.Row>
+              )}
+            />
+          </>
+        )}
       </View>
-    
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  appbarTitle:{
-    fontSize: 10,
-  },
-
-  container:{
+  container: {
     flex: 1,
-    backgroundColor:"white",
-  },
-
-  fistcontainer:{
-    flex: 0.27,
     backgroundColor: 'white',
-    borderWidth: 1,
-    borderRadius: 10,
-    margin: 15,
   },
-
-  secondcontainer:{
-    flex: 0.27,
+  appbar: {
     backgroundColor: 'white',
-    borderWidth: 1,
-    borderRadius: 10,
-    margin: 15,
+  },
+  api: {
+    flex: 1,
+  },
+  colorText: {
+    color: 'green',
   },
 
-  cardDesign: {
-    borderWidth: 1,
-    borderRadius: 10,
-    marginLeft: 13,
-    marginRight: 13,
-    marginTop: 8,
-  },
-})
+});
 
 export default OrderEntry;

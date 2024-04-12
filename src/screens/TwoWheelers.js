@@ -9,7 +9,7 @@ const TwoWheelers=({navigation})=> {
       
       <View style={styles.appbar}>
         <Appbar.Header>
-          <Appbar.BackAction onPress={()=>navigation.navigate('Home')}/>
+          <Appbar.BackAction onPress={()=>navigation.navigate('Product')}/>
           <Appbar.Content 
             title="Two Wheelers" 
             style={{fontSize: 10}}/>
