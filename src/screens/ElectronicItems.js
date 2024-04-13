@@ -9,7 +9,7 @@ const ElectronicItems=({navigation})=> {
       
       <View style={styles.appbar}>
         <Appbar.Header>
-          <Appbar.BackAction onPress={()=>navigation.navigate('Home')}/>
+          <Appbar.BackAction onPress={()=>navigation.navigate('Product')}/>
           <Appbar.Content 
             title="Electronic Items" 
             style={{fontSize: 10}}/>

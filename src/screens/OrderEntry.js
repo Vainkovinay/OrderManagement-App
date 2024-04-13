@@ -25,7 +25,7 @@ const OrderEntry = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.appbar}>
-        <Appbar.Header>
+        <Appbar.Header style={styles.appbarHeader}>
           <Appbar.BackAction onPress={() => navigation.navigate('Home')} />
           <Appbar.Content title="Order Entry" />
         </Appbar.Header>
@@ -66,14 +66,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  appbar: {
-    backgroundColor: 'white',
+  appbarHeader: {
+    backgroundColor: 'skincolor',
   },
   api: {
     flex: 1,
   },
   colorText: {
     color: 'green',
+    fontWeight: '600'
   },
 
 });

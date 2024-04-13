@@ -72,66 +72,21 @@ const HomeScreen=({navigation})=> {
       </View>
 
       <View style={styles.secondcontainer} elevation={4}>
-        
         <Text style={styles.containerheading}>Transactions</Text>
-
         <View style={{flexDirection: 'row'}}>
 
-          
-          
           <View style={styles.insideview1} elevation={8}>
-            
             <TouchableOpacity onPress={()=>navigation.navigate('Order')}>
-              
               <Image style={styles.personimage} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/down-arrow.png')}></Image>
-              
-              <Text style={styles.insidetext}>Order Entry</Text>
-            
+              <Text style={styles.insidetext}>Order Entry</Text>           
             </TouchableOpacity>
-          
           </View>
         
         </View>
       </View>
-
-      <View>
-        <PaperProvider>
-          <Portal>
-            <FAB.Group
-              open={open}
-              visible
-              icon={open ? 'calendar-today' : 'plus'}
-              actions={[
-                { icon: 'plus', onPress: () => console.log('Pressed add') },
-                {
-                  icon: 'star',
-                  label: 'Star',
-                  onPress: () => console.log('Pressed star'),
-                },
-                {
-                  icon: 'email',
-                  label: 'Email',
-                  onPress: () => console.log('Pressed email'),
-                },
-                {
-                  icon: 'bell',
-                  label: 'Remind',
-                  onPress: () => console.log('Pressed notifications'),
-                },
-              ]}
-              onStateChange={onStateChange}
-              onPress={() => {
-                if (open) {
-                  // do something if the speed dial is open
-                }
-              }}
-            />
-          </Portal>
-        </PaperProvider>
-      </View>
       
-
     </View>
+      
   );
 };
 
@@ -205,6 +160,9 @@ const styles = StyleSheet.create({
   insidetext:{
     alignSelf: 'center',
     fontSize: 15,
+  },
+  fabstyle: {
+    alignItems: 'flex-end'
   },
 })
 
