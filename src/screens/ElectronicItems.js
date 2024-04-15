@@ -19,32 +19,32 @@ const ElectronicItems=({navigation})=> {
         <View>
           <View style={styles.cardDesign}>
             <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E1.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Flower Vase \n\nColor: Gold \n\nType: Copper \n\nPrice: 5,000/- \n\nContact: 9988772277'}</Text>
+            <Text style={styles.insideText}>{'Product: Pendrive 256GB  \n\nColor: Silver \n\nPrice: 1,499/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E2.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Clock \n\nColor: Gold \n\nPrice: 1,599/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E7.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Apple Earpods  \n\nColor: White \n\nPrice: 5,999/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}> 
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E3.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Artificial Plants \n\nCount: 3 different Plants \n\nPrice: 899/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E8.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Podcast Mic \n\nColor: Black \n\nPrice: 9,999/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E4.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Mirror \n\nSize: 2ft \n\nPrice: 10,000/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E9.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: USB Charger \n\nSize: 2 Meter \n\nPrice: 400/- \n\nContact: 9988772277'}</Text>
           </View>
 
           <View style={styles.cardDesign}>
             <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E5.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Circular Mirror \n\nSize: 1.2ft \n\nPrice: 9,999/- \n\nContact: 9988772277'}</Text>
+            <Text style={styles.insideText}>{'Product: Headphone \n\nColor: Red \n\nPrice: 9,999/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
             <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E6.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Carpet \n\nColor: Cream \n\nSize: 10M (Meter) \n\nPrice: 999/- \n\nContact: 9988772277'}</Text>
+            <Text style={styles.insideText}>{'Product: USB Chatger \n\nSize: 5 Meter \n\nPrice: 599/- \n\nContact: 9988772277'}</Text>
           </View>
         </View>
         
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 
   image: {
     height: 200,
-    width: 160,
+    width: 145,
     borderRadius: 5,
     margin: 10,
     alignSelf: 'center',
@@ -88,8 +88,7 @@ const styles = StyleSheet.create({
 
   insideText: {
     color: 'black',
-    paddingLeft: 3,
-    paddingTop: 40,
+    paddingTop: 35,
     paddingRight: 13,
     textAlign: 'justify',
     justifyContent: 'center',

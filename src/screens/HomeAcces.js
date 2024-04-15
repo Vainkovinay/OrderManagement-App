@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   insideText: {
     color: 'black',
     paddingLeft: 3,
-    paddingTop: 40,
+    paddingTop: 35,
     paddingRight: 13,
     textAlign: 'justify',
     justifyContent: 'center',

@@ -19,33 +19,33 @@ const Stationary=({navigation})=> {
       <ScrollView style={{flexDirection: 'column'}}>
         <View>
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S1.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Flower Vase \n\nColor: Gold \n\nType: Copper \n\nPrice: 5,000/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S6.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Book Set of 6 \n\nBrand: Classmate \n\nPrice: 599/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S2.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Clock \n\nColor: Gold \n\nPrice: 1,599/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S5.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Book Set of 6 \n\nBrand: Sundaram \n\nPrice: 699/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}> 
             <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S3.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Artificial Plants \n\nCount: 3 different Plants \n\nPrice: 899/- \n\nContact: 9988772277'}</Text>
+            <Text style={styles.insideText}>{'Product: Dairy + Pen \n\nBrand: Arteza \n\nPrice: 899/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S4.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Mirror \n\nSize: 2ft \n\nPrice: 10,000/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S7.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Crayons \n\nBrand: Doms \n\nPrice: 300/- \n\nContact: 9988772277'}</Text>
           </View>
 
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S5.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Circular Mirror \n\nSize: 1.2ft \n\nPrice: 9,999/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S1.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Stamp \n\nPrice: 100/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S6.jpeg')}/>
-            <Text style={styles.insideText}>{'Material: Carpet \n\nColor: Cream \n\nSize: 10M (Meter) \n\nPrice: 999/- \n\nContact: 9988772277'}</Text>
+            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S2.jpeg')}/>
+            <Text style={styles.insideText}>{'Product: Eraser \n\nBrand: Staedtler \n\nPrice: 50/- \n\nContact: 9988772277'}</Text>
           </View>
         </View>
         
@@ -74,23 +74,23 @@ const styles = StyleSheet.create({
     marginLeft: 13,
     marginRight: 13,
     marginTop: 10,
-    height: 200,
+    height: 220,
     elevation: 7,
     borderColor: 'white',
   },
 
   image: {
     height: 200,
-    width: 150,
+    width: 145,
     borderRadius: 5,
     margin: 10,
     alignSelf: 'center',
   },
 
+
   insideText: {
     color: 'black',
-    paddingLeft: 3,
-    paddingTop: 40,
+    paddingTop: 35,
     paddingRight: 13,
     textAlign: 'justify',
     justifyContent: 'center',
