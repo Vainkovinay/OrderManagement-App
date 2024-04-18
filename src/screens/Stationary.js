@@ -19,32 +19,32 @@ const Stationary=({navigation})=> {
       <ScrollView style={{flexDirection: 'column'}}>
         <View>
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S6.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/S6.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Book Set of 6 \n\nBrand: Classmate \n\nPrice: 599/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S5.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/S5.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Book Set of 6 \n\nBrand: Sundaram \n\nPrice: 699/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}> 
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S3.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/S3.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Dairy + Pen \n\nBrand: Arteza \n\nPrice: 899/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S7.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/S7.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Crayons \n\nBrand: Doms \n\nPrice: 300/- \n\nContact: 9988772277'}</Text>
           </View>
 
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S1.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/S1.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Stamp \n\nPrice: 100/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/S2.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/S2.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Eraser \n\nBrand: Staedtler \n\nPrice: 50/- \n\nContact: 9988772277'}</Text>
           </View>
         </View>

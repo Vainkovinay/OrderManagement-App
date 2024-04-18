@@ -19,32 +19,32 @@ const TwoWheelers=({navigation})=> {
       <ScrollView style={{flexDirection: 'column'}}>
         <View>
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B1.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/B1.jpeg')}/>
             <Text style={styles.insideText}>{'Model: Vintage \n\nColor: Wine \n\nSpeed: 50km/hr \n\nPrice: 50,000/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B2.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/B2.jpeg')}/>
             <Text style={styles.insideText}>{'Model: Vintage \n\nColor: Orange \n\nSpeed: 55km/hr \n\nPrice: 55,000/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}> 
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B3.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/B3.jpeg')}/>
             <Text style={styles.insideText}>{'Model: Mountain Duke \n\nColor: DarkGreen \n\nSpeed: 70km/hr \n\nPrice: 80,000/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B4.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/B4.jpeg')}/>
             <Text style={styles.insideText}>{'Model: Mountain Bike \n\nColor: Green \n\nSpeed: 70km/hr \n\nPrice: 1,00,000/- \n\nContact: 9988772277'}</Text>
           </View>
 
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B5.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/B5.jpeg')}/>
             <Text style={styles.insideText}>{'Model: Honda R17 \n\nColor: Black \n\nSpeed: 250km/hr \n\nPrice: 5,00,000/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/B6.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/B6.jpeg')}/>
             <Text style={styles.insideText}>{'Model: Kart \n\nColor: Black \n\nSpeed: 60km/hr \n\nPrice: 1,00,000/- \n\nContact: 9988772277'}</Text>
           </View>
         </View>

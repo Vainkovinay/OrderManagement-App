@@ -18,32 +18,32 @@ const ElectronicItems=({navigation})=> {
       <ScrollView style={{flexDirection: 'column'}}>
         <View>
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E1.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/E1.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Pendrive 256GB  \n\nColor: Silver \n\nPrice: 1,499/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E7.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/E7.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Apple Earpods  \n\nColor: White \n\nPrice: 5,999/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}> 
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E8.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/E8.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Podcast Mic \n\nColor: Black \n\nPrice: 9,999/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E9.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/E9.jpeg')}/>
             <Text style={styles.insideText}>{'Product: USB Charger \n\nSize: 2 Meter \n\nPrice: 400/- \n\nContact: 9988772277'}</Text>
           </View>
 
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E5.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/E5.jpeg')}/>
             <Text style={styles.insideText}>{'Product: Headphone \n\nColor: Red \n\nPrice: 9,999/- \n\nContact: 9988772277'}</Text>
           </View>
           
           <View style={styles.cardDesign}>
-            <Image style={styles.image} source={require('D:/HEMANT SHRIMALI/Replica-app/assets/E6.jpeg')}/>
+            <Image style={styles.image} source={require('D:/VINAY SHRIMALI/Replica-app/assets/E6.jpeg')}/>
             <Text style={styles.insideText}>{'Product: USB Chatger \n\nSize: 5 Meter \n\nPrice: 599/- \n\nContact: 9988772277'}</Text>
           </View>
         </View>
