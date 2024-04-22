@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState, useEffect } from 'react';
+import LottieView from 'lottie-react-native';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Image,Alert} from 'react-native';
 import { TextInput, Checkbox } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -53,21 +54,30 @@ const LoginScreen=({navigation})=> {
         
         <Text style={styles.heading}>Order Management</Text>
 
-        <Image 
+        {/* <Image 
           style={styles.image} 
           source={require('D:/VINAY SHRIMALI/Replica-app/assets/TechnosysI.png')}>
-        </Image>
+        </Image> */}
+        <View style={{height:200}}>
+          <LottieView 
+            style={styles.animate}
+            source={require('D:/VINAY SHRIMALI/Replica-app/assets/Animation2.json')} 
+            autoPlay loop 
+            />
+        </View>
         
-        <TextInput
-          style={styles.inputText}
-          mode= 'outlined'
-          label='User Name'
-          onChangeText={(text)=> setUsername(text)}
-        ></TextInput>
-        {loginClicked && errors.username && (
-          <Text style={styles.error}>{errors.username}</Text>
-        )}
-        
+        <View>
+          <TextInput
+            style={styles.inputText}
+            mode= 'outlined'
+            label='User Name'
+            onChangeText={(text)=> setUsername(text)}
+          ></TextInput>
+          {loginClicked && errors.username && (
+            <Text style={styles.error}>{errors.username}</Text>
+          )}
+        </View>
+
         <View style={styles.passwordContainer}>
           <TextInput
             mode='outlined'
@@ -122,6 +132,12 @@ const styles = StyleSheet.create({
     color: 'red',
     fontSize: 13,
     paddingBottom: 10,
+  },
+  animate:{
+    flex: 1,
+    height: 180,
+    width: 180,
+    marginBottom: 20,
   },
   wrapper:{
     alignContent:'center',
@@ -196,11 +212,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  image:{
-    height: 130,
-    width: 130,
-    marginBottom: 40,
-  }
 })
 
 export default LoginScreen;

@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Pressable } from 'react-native';
 import { Appbar, Avatar, Card, IconButton, Surface, FAB, Portal, PaperProvider} from 'react-native-paper';
+import Icon from 'react-native-ico-material-design';
 
 const HomeScreen=({navigation})=> {
   const [state, setState] = React.useState({ open: false });
