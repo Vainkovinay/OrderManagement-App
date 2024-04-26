@@ -25,7 +25,7 @@ const LoginScreen=({navigation})=> {
     let errors ={};
 
     if (!username) {
-      errors.username = 'username is required';
+      errors.username = 'Username is required';
     }
 
     if(!password){
@@ -43,8 +43,6 @@ const LoginScreen=({navigation})=> {
     setLoginClicked(true);
     if (isFormValid) {
       navigation.navigate('Home');
-    } else {
-      Alert.alert('Please Enter the Fields Properly.');
     }
   };
 
@@ -66,7 +64,7 @@ const LoginScreen=({navigation})=> {
             />
         </View>
         
-        <View>
+        <View style={styles.usernameContainer}>
           <TextInput
             style={styles.inputText}
             mode= 'outlined'
@@ -95,9 +93,11 @@ const LoginScreen=({navigation})=> {
             /> 
           </TouchableOpacity>
         </View>
-        {loginClicked && errors.password && (
-          <Text style={styles.error}>{errors.password}</Text>
-        )}
+        <View style={styles.usernameContainer}>
+          {loginClicked && errors.password && (
+            <Text style={styles.error}>{errors.password}</Text>
+          )}
+        </View>
         
       </View>
       
@@ -147,7 +147,13 @@ const styles = StyleSheet.create({
   passwordContainer: {
     width: 300,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginBottom: 10,
+  },
+  usernameContainer: {
+    width: 300,
+    alignItems: 'flex-start',
     marginBottom: 10,
   },
   rememberContainer: {
@@ -179,6 +185,7 @@ const styles = StyleSheet.create({
   },
   icon: { 
     color: 'black',
+    paddingTop: 20,
   }, 
   heading:{
     fontWeight:'bold',

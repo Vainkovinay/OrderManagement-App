@@ -85,7 +85,30 @@ const HomeScreen=({navigation})=> {
         
         </View>
       </View>
-      
+      <View style={{flex: 0.40}}>
+        <PaperProvider style={styles.fabstyle}>
+          <Portal>
+            <FAB.Group
+              open={open}
+              visible
+              icon={open ? 'calendar-today' : 'plus'}
+              actions={[
+                {
+                  icon: 'email',
+                  label: 'Email',
+                  onPress: () => console.log('Pressed Email'),
+                },
+              ]}
+              onStateChange={onStateChange}
+              onPress={() => {
+                if (open) {
+                  // do something if the speed dial is open
+                }
+              }}
+            />
+          </Portal>
+      </PaperProvider>
+      </View>  
     </View>
       
   );
@@ -163,6 +186,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   fabstyle: {
+    marginTop: 10,
     alignItems: 'flex-end'
   },
 })
