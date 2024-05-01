@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState, useEffect } from 'react';
-import { render } from 'react-dom';
+import * as React from 'react';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import { Appbar, Avatar, Card, IconButton, ActivityIndicator } from 'react-native-paper';
+import { Appbar, Avatar, Card, IconButton, ActivityIndicator, FAB, PaperProvider, Portal } from 'react-native-paper';
 
 const CustomerScreen = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const userColors = ['darkred', 'blue','pink','skyblue' ,'purple','green', 'lightgreen'];
+  const [state, setState] = React.useState({ open: false });
+  const onStateChange = ({ open }) => setState({ open });
+  const { open } = state;
 
   const customer = async () => {
     try {
@@ -58,7 +61,44 @@ const CustomerScreen = ({navigation}) => {
             )}
           />
         )}
+
+          <FAB.Group
+            
+            open={open}
+            visible
+            icon={open ? 'home' : 'home'}
+            actions={[
+              {
+                icon: 'arrow-down-box',
+                label: 'Order Entry',
+                onPress: () => navigation.navigate('Order'),
+              },
+              {
+                icon: 'dropbox',
+                label: 'Product Master',
+                onPress: () => navigation.navigate('Master'),
+              },
+              {
+                icon: 'account',
+                label: 'Customer',
+                onPress: () => navigation.navigate('Customer'),
+              },
+              {
+                icon: 'home',
+                label: 'Home',
+                onPress: () => navigation.navigate('Home'),
+              },
+            ]}
+            onStateChange={onStateChange}
+            style={styles.fabstyle}
+            onPress={() => {
+              if (open) {
+                // do something if the speed dial is open
+              }
+            }}
+          />
       </View>
+        
     </View>
   );
 };
@@ -71,6 +111,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "skincolor",
+    position: 'relative',
   },
   cardDesign: {
     backgroundColor: 'white',
@@ -95,6 +136,8 @@ const styles = StyleSheet.create({
     padding: 8,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  fabstyle: {
   },
 });
 

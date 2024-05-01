@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList, Text } from 'react-native';
-import { Appbar, DataTable, ActivityIndicator } from 'react-native-paper';
+import { Appbar, DataTable, ActivityIndicator, FAB} from 'react-native-paper';
 
 const OrderEntry = ({ navigation }) => {
+  const [state, setState] = React.useState({ open: false });
+  const onStateChange = ({ open }) => setState({ open });
+  const { open } = state;
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -56,6 +59,41 @@ const OrderEntry = ({ navigation }) => {
             />
           </>
         )}
+        <FAB.Group
+            
+            open={open}
+            visible
+            icon={open ? 'home' : 'home'}
+            actions={[
+              {
+                icon: 'arrow-down-box',
+                label: 'Order Entry',
+                onPress: () => navigation.navigate('Order'),
+              },
+              {
+                icon: 'dropbox',
+                label: 'Product Master',
+                onPress: () => navigation.navigate('Master'),
+              },
+              {
+                icon: 'account',
+                label: 'Customer',
+                onPress: () => navigation.navigate('Customer'),
+              },
+              {
+                icon: 'home',
+                label: 'Home',
+                onPress: () => navigation.navigate('Home'),
+              },
+            ]}
+            onStateChange={onStateChange}
+            style={styles.fabstyle}
+            onPress={() => {
+              if (open) {
+                // do something if the speed dial is open
+              }
+            }}
+          />
       </View>
     </View>
   );

@@ -1,9 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
+import * as React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Appbar, Avatar, Card, IconButton } from 'react-native-paper';
+import { Appbar, Avatar, Card, IconButton,FAB} from 'react-native-paper';
 import { TouchableOpacity } from 'react-native-web';
 
 const ProductCategory=({navigation})=> {
+  const [state, setState] = React.useState({ open: false });
+  const onStateChange = ({ open }) => setState({ open });
+  const { open } = state;
   return (
     
     <View style={styles.container}>
@@ -49,6 +53,41 @@ const ProductCategory=({navigation})=> {
             right={(props) => <IconButton {...props} icon="arrow-right-bold" onPress={() => navigation.navigate('Sta')} />}
         />
       </View>
+      <FAB.Group
+            
+            open={open}
+            visible
+            icon={open ? 'home' : 'home'}
+            actions={[
+              {
+                icon: 'arrow-down-box',
+                label: 'Order Entry',
+                onPress: () => navigation.navigate('Order'),
+              },
+              {
+                icon: 'dropbox',
+                label: 'Product Master',
+                onPress: () => navigation.navigate('Master'),
+              },
+              {
+                icon: 'account',
+                label: 'Customer',
+                onPress: () => navigation.navigate('Customer'),
+              },
+              {
+                icon: 'home',
+                label: 'Home',
+                onPress: () => navigation.navigate('Home'),
+              },
+            ]}
+            onStateChange={onStateChange}
+            style={styles.fabstyle}
+            onPress={() => {
+              if (open) {
+                // do something if the speed dial is open
+              }
+            }}
+          />
     
     </View>
   );

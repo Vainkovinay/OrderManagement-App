@@ -21,7 +21,7 @@ const HomeScreen=({navigation})=> {
           <Appbar.Content 
             title="Order Management" 
             style={{fontSize: 10}}/>
-          <Appbar.Action icon="dots-vertical" onPress={()=>{}} />
+          <Appbar.Action icon="account" onPress={()=>{}} />
         
         </Appbar.Header>
       
@@ -39,7 +39,7 @@ const HomeScreen=({navigation})=> {
                 
                 <Image 
                   style={styles.personimage} 
-                  source={require('D:/VINAY SHRIMALI/Replica-app/assets/user (1).png')}
+                  source={require('D:/VINAY SHRIMALI/Replica-app/assets/user.png')}
                 ></Image>
                 
                 <Text style={styles.insidetext}>Customer</Text>
@@ -52,7 +52,7 @@ const HomeScreen=({navigation})=> {
             
             <TouchableOpacity onPress={()=>navigation.navigate('Product')}>
             
-            <Image style={styles.personimage} source={require('D:/VINAY SHRIMALI/Replica-app/assets/folder (1).png')}></Image>
+            <Image style={styles.personimage} source={require('D:/VINAY SHRIMALI/Replica-app/assets/folder.png')}></Image>
             
             <Text style={styles.insidetext}>Product Category</Text>
             
@@ -61,10 +61,14 @@ const HomeScreen=({navigation})=> {
           </View>
 
           <View style={styles.insideview2} elevation={8}>
+
+            <TouchableOpacity onPress={()=>navigation.navigate('Master')}>
             
             <Image style={styles.personimage} source={require('D:/VINAY SHRIMALI/Replica-app/assets/cubes.png')}></Image>
             
             <Text style={styles.insidetext}>Product Master</Text>
+
+            </TouchableOpacity>
           
           </View>
 
@@ -85,21 +89,37 @@ const HomeScreen=({navigation})=> {
         
         </View>
       </View>
-      <View style={{flex: 0.40}}>
+      <View style={{flex: 0.45}}>
         <PaperProvider style={styles.fabstyle}>
           <Portal>
             <FAB.Group
               open={open}
               visible
-              icon={open ? 'calendar-today' : 'plus'}
+              icon={open ? 'home' : 'home'}
               actions={[
                 {
-                  icon: 'email',
-                  label: 'Email',
-                  onPress: () => console.log('Pressed Email'),
+                  icon: 'arrow-down-box',
+                  label: 'Order Entry',
+                  onPress: () => navigation.navigate('Order'),
+                },
+                {
+                  icon: 'dropbox',
+                  label: 'Product Master',
+                  onPress: () => navigation.navigate('Master'),
+                },
+                {
+                  icon: 'account',
+                  label: 'Customer',
+                  onPress: () => navigation.navigate('Customer'),
+                },
+                {
+                  icon: 'home',
+                  label: 'Home',
+                  onPress: () => navigation.navigate('Home'),
                 },
               ]}
               onStateChange={onStateChange}
+              style={styles.fabstyle}
               onPress={() => {
                 if (open) {
                   // do something if the speed dial is open
